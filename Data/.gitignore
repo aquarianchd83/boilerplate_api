@@ -41,8 +41,13 @@ testem.log
 .DS_Store
 Thumbs.db
 
-Api/bin
-Api/obj
-Data/bin
-Data/obj
+kitty_admin/bin
+Kitty_admin/obj
+kitty.Api/bin
+Kitty.Api/obj
+kitty.Data/bin
+Kitty.Data/obj
+IntegrationTest.kitty/obj
+IntegrationTest.kitty/bin
+Kitty_admin/wwwroot/lib/bootstrap/dist
 .vs
