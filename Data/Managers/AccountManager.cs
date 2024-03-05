@@ -61,15 +61,15 @@ namespace Data.Managers
             if (user != null)
             {
                 IList<string> existingRoles = await _userManager.GetRolesAsync(user);
-                var role = existingRoles.FirstOrDefault();
+                //var role = existingRoles.FirstOrDefault();
 
-                if (role == UserRole.Admin.ToString())
-                {
-                    return new LoginResponse()
-                    {
-                        Message = "Invalid Login",
-                    };
-                }
+                //if (role == UserRole.Admin.ToString())
+                //{
+                //    return new LoginResponse()
+                //    {
+                //        Message = "Invalid Login",
+                //    };
+                //}
 
                 bool isValid = await _userManager.CheckPasswordAsync(user, loginRequest.Password);
 

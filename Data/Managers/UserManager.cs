@@ -59,7 +59,7 @@ namespace Data.Managers
             _environment = environment;
             var connectionString = configuration.GetConnectionString("StorageConnectionString");
             _blobServiceClient = new BlobServiceClient(connectionString);
-            _containerName = configuration.GetConnectionString("ContainerName");
+            _containerName = configuration["AppSettings:ContainerName"];
         }
 
         public async Task<UserResponse> GetAsync(UserFilter filter)
