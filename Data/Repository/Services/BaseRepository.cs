@@ -21,6 +21,7 @@ namespace Data.Repository.Services
         Task<bool> DeleteAsync(TEntity model);
         Task<TEntity> GetByIdAsync(params object[] id);
 
+        Task<TEntity> SaveAsync(TEntity model, string? processedBy = null);
     }
 
     public class GenericRepository<TEntity> : IGenericRepository<TEntity>
@@ -127,6 +128,11 @@ namespace Data.Repository.Services
             _dbContext.Set<TEntity>().Remove(model);
             var deleteCount = await _dbContext.SaveChangesAsync();
             return deleteCount >0;
+        }
+
+        public virtual Task<TEntity> SaveAsync(TEntity model, string? processedBy = null)
+        {
+            throw new NotImplementedException();
         }
     }
 

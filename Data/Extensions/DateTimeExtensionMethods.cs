@@ -214,6 +214,13 @@ namespace Data.Extensions
             TimeZoneInfo tz = TimeZoneInfo.FindSystemTimeZoneById("AUS Eastern Standard Time");
             return TimeZoneInfo.ConvertTimeToUtc(DateTime.SpecifyKind(src, DateTimeKind.Unspecified), tz);
         }
+        public static string GetTimeBetweenDates(this DateTime endDate, DateTime startDate)
+        {
+            TimeSpan _date = (endDate - startDate);
+            return string.Format("{0}:{1}:{2}", Math.Round(_date.TotalHours), Math.Round(_date.TotalMinutes), Math.Round(_date.TotalSeconds));
+        }
+
+
     }
 
 

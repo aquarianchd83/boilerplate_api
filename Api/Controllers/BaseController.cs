@@ -15,12 +15,6 @@ namespace Api.Controllers
 
     public class BaseController : Controller
     {
-        //[ApiExplorerSettings(IgnoreApi = true)]
-        //public OkObjectResult Success()
-        //{
-        //    return Ok(new { Status = true });
-        //}
-
         [ApiExplorerSettings(IgnoreApi = true)]
         public OkObjectResult Success(object data = null)
         {
@@ -152,13 +146,11 @@ namespace Api.Controllers
 
             return Success(res);
         }
-
       
         public static bool IsUserAuthenticated(HttpContext httpContext)
         {
             return httpContext.User.Identity.IsAuthenticated;
         }
-
 
         public string LogedInUserId
         {
@@ -169,8 +161,5 @@ namespace Api.Controllers
                 return claim.Value;
             }
         }
-
-
-
     }
 }

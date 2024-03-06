@@ -17,6 +17,7 @@ namespace Data
         public DbSet<LogException> LogExceptions { get; set; }
         public DbSet<RefreshToken> RefreshToken { get; set; }
 
+        public DbSet<LogActivity> LogActivity { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         

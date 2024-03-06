@@ -35,7 +35,8 @@ builder.Services.AddScoped<IUserManager, UserManager>();
 builder.Services.AddScoped<IAccountManager, AccountManager>();
 builder.Services.AddScoped<IDashboardManager, DashboardManager>();
 builder.Services.AddScoped<IIdentityTokenService, IdentityTokenService>();
-
+builder.Services.AddScoped<ILogExceptionService, LogExceptionService>();
+builder.Services.AddScoped<ILogActivityService, LogActivityService>();
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 builder.Services.AddAutoMapper(typeof(Program));
 var key = builder.Configuration.GetValue<string>("ApiSettings:Secret");
@@ -110,7 +111,7 @@ app.UseCors();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<LoggingMiddleware>();
 /*app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Data.Extensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Data.Domain
@@ -10,14 +12,12 @@ namespace Data.Domain
         [Key]
         public long Id { get; set; }
 
-        public Guid RequestId { get; set; }
-
         public string Message { get; set; }
 
         [StringLength(5000)]
         public string StackTrace { get; set; }
 
-        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedOn { get; set; } = DateTime.UtcNow.GetIndianCurrentDate();
 
         public ExceptionType ExceptionType { get; set; }
     }

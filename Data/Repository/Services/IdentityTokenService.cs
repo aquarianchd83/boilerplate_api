@@ -58,7 +58,7 @@ namespace Data.Repository.Services
               new Claim(ClaimTypes.Role, roles.FirstOrDefault()),
              new Claim("id", user.Id),
          }),
-                Expires = DateTime.UtcNow.AddMinutes(5),
+                Expires = DateTime.UtcNow.GetIndianCurrentDate().AddMinutes(5),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
