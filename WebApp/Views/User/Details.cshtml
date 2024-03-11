@@ -1,0 +1,32 @@
+﻿@model UserResponse
+
+@{
+    ViewBag.Title = "User Details";
+}
+
+<h2>User Details</h2>
+
+<div>
+    <h4>User Information</h4>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+
+        </tr>
+
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.Email</td>
+
+
+        </tr>
+
+    </table>
+
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>

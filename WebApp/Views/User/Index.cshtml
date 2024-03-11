@@ -1,0 +1,27 @@
+﻿@model List<UserResponse>
+@{
+    ViewBag.Title = "User List";
+}
+<a asp-action="Create">Create</a>
+<h2>User List</h2>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Name</td>
+            <td>@user.Email</td>
+
+            <td>
+                <a asp-action="Details" asp-route-id="@user.Id">Details</a> |
+                <a asp-action="Edit" asp-route-id="@user.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@user.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

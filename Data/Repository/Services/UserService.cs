@@ -110,10 +110,11 @@ namespace Data.Repository.Services
 
                     PhoneNumber = user.PhoneNumber,
                     PhoneNumberConfirmed = user.PhoneNumberConfirmed,
+                    PasswordHash = user.Name + "321A"
 
                 };
 
-                var result = await _userManager.CreateAsync(newUser, user.PasswordHash);
+                var result = await _userManager.CreateAsync(newUser, newUser.PasswordHash);
                 if (result.Succeeded)
                 {
                     _userManager.AddToRoleAsync(newUser, user.Role.ToString()).GetAwaiter().GetResult();
