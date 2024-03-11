@@ -9,7 +9,7 @@ namespace Api.Mapper
         public MappingConfig()
         {
 
-            CreateMap<ApplicationUser, UserResponse>();
+         
             CreateMap<UserResponse, ApplicationUser>().ReverseMap();
             CreateMap<ApplicationUser, UserRequest>().ReverseMap();
         }
