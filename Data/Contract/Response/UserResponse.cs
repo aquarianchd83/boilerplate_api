@@ -11,12 +11,10 @@ namespace Data.Contract.Response
         public string Id { get; set; }
         public string Name { get; set; }
         public string FirstName { get; set; }
-        public string lastName { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string UserName { get; set; }
-        public string Password { get; set; }
-        public DateTime ValidUpto { get; set; }
         public string UserLogo { get; set; }
 
     }

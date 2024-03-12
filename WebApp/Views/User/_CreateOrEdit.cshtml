@@ -1,0 +1,40 @@
+﻿@model UserRequest
+
+
+<form asp-action="Save" method="post">
+    <div>
+        <div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="Id" type="hidden" />
+                @if (string.IsNullOrEmpty(Model.Id))
+                {
+                    <button type="submit" class="btn btn-default">Create</button>
+                }
+                else
+                {
+                    <button type="submit" class="btn btn-default">Edit</button>
+                }
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
