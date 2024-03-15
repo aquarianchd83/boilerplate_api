@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using static Data.ApplicationDbContext;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
